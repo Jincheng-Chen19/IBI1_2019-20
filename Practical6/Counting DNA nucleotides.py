@@ -4,9 +4,11 @@ Created on Wed Mar 18 09:55:23 2020
 
 @author: lenovo
 """
+# import necessary libraries
 import matplotlib.pyplot as plt
+# input DNA sequence
+L='ATGCTTCAGAAAGGTCTTACG'
 # count the number of these four nucleotides
-L=['A','T','G','C','T','T','C','A','G','A','A','A','G','G','T','C','T','T','A','C','G']
 a=L.count('A')
 g=L.count('G')
 c=L.count('C')
@@ -19,7 +21,9 @@ print(nucleotides)
 # make the pie chart
 labels='A','G','C','T'
 sizes=[a/x,g/x,c/x,t/x]
-explode=(0,0,0,0.08)
+explode=(0,0,0,0.1)
 plt.pie(sizes,explode=explode,labels=labels,autopct='%1.1f%%',shadow=False, startangle=90)
 plt.axis('equal')
+# add a title to the pie chart
+plt.title('four DNA nucleotides')
 plt.show()
