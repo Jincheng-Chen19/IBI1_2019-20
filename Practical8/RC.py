@@ -4,17 +4,21 @@ Created on Tue Mar 31 23:58:28 2020
 
 @author: lenovo
 """
-L=[]
+# import necessary libraries
 import re
+L=[]
+# input the sequence
 seq='ATGCGACTACGATCGAGGGCCAT'
-seq1=re.sub('G+?','c',seq)
-seq1=re.sub('C+?','G',seq1)
-seq1=re.sub('c+?','C',seq1)
-seq1=re.sub('A+?','t',seq1)
-seq1=re.sub('T+?','A',seq1)
-seq1=re.sub('t+?','T',seq1)
+# find the complementary bases
+seq1=re.sub('G','c',seq)
+seq1=re.sub('C','g',seq1)
+seq1=re.sub('A','t',seq1)
+seq1=re.sub('T','a',seq1)
+seq1=seq1.upper()
+# use list to reverse the sequence, let the cDNA sequence from 5' to 3'
 L=list(seq1)
 L.reverse()
+# change the list to string
 cseq=''.join([str(a)for a in L])
 print(seq)
 print(seq1)

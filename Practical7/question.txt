@@ -1,4 +1,4 @@
 Are there places in the World where there have not yet been more than 10 total infections (as of 31 March)? If so, where are they? 
-from the line 44
+from the line 60
 discussion: from the result, we can see that before march thirty-first in 2020, there are 41 places whose total cases are below 10 cases. 
 Most of these places don't have large population. The mobility of population in most of these places is not strong.
