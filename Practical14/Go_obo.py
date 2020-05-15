@@ -49,6 +49,7 @@ for i in a:
     NAMEs=terms.item(i).getElementsByTagName('name')[0]
     names.append(NAMEs.childNodes[0].data)
     d.append(defs[i])
+# make sure it will not break the limit of recursion
 sys.setrecursionlimit(10000)
 # make a recursion function to find the number of childnodes
 def F(count=int,n=int,l=list,c=list):
