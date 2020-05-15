@@ -2,7 +2,7 @@ This is the reflection of all practicals.
 In my opinion, these practicals practice my ability to use python to achieve some aims, and make me know my mastery of the content of the lectures.
 At the same time, they make me fall in love with programming. When I finish one practical, I will get so much fun.
 But it is still hard for me to make some complex codes, and I am not good at using recursion, which means I still need to improve my ability.
-For these practicals, most of the practicals are of moderate difficulty. But, some are quite hard, I will work together with other students to finish the codes.
+For these practicals, most of the practicals are of moderate difficulty. But, some are quite hard, I worked together with other students to finish the codes.
 Sometimes, I will get some codes from the internet to help me finish the whole codes.
 According to the formative feedback, I know that sometimes my code is a little complex, and I am not good at writing pseudocodes.
 I tried to improve these aspects in the rest of my experiments. Hope that I achieve my aim to improve these.
