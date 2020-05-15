@@ -1,6 +1,6 @@
-Fr this practical, I use the percentage to show the proportion of same amino acids between each two sequences.
-And, I use BLOSUM62 as matrix, and compare the similarity between the protein sequences of human, mouse and random.
-Result shows that human-mouse score is much higher than the scores of human-random and mouse-random.
-And, the percentage of human-mouse is also the highest one.
-From the both results, it is obvious that human sequence and mouse sequence are much more similar compared with random sequence.
+For this practical, I use the percentage to show the proportion of the same amino acids between every two sequences.
+I use BLOSUM62 as the matrix and compare the similarity between the protein sequences of human, mouse, and random.
+The result shows that the human-mouse score is much higher than the scores of human-random and mouse-random.
+The percentage of human-mouse is also the highest one.
+From both results, it is obvious that the human sequence and mouse sequence are much more similar compared with the random sequence.
 Human and mouse may have a relatively recent common ancestor, which causes this similarity.
