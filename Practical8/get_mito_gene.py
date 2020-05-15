@@ -7,24 +7,30 @@ Created on Wed Apr  1 00:56:15 2020
 # read the content
 xfile=open('Saccharomyces_cerevisiae.R64-1-1.cdna.all.fa','r')
 x=[]
-z=str()
+y=str()
 gene=[]
 genename=[]
-y=[]
 count=0
-# get all the gene in xfile
+# get all the genes in xfile
 for line in xfile:
+    # find the line containing the gene information
     if line.startswith('>'):
-        if z!='':
-            gene.append(z)
+        # add the sequence of the previous gene to 'gene' list
+        if y!='':
+            gene.append(y)
+        # add the gene name to 'genename' list
         genename.append(line[1:6])
-        z=''
+        # add all the gene information to 'x' list
         x.append(line)
+        # count the total number of gene
         count+=1
+        y=''
     else:
+        # if the line don't have '>', this line containing the sequence.
+        # remove the '\n' and add them to a string.
         line=line.rstrip()
-        z=z+str(line)
-gene.append(z)
+        y+=line
+gene.append(y)
 yfile=open('mito_gene.fa','w')
 # find the genes on mitochondria chromosome
 for i in range(count):

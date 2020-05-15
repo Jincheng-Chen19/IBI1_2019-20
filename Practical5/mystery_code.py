@@ -1,5 +1,5 @@
 # What does this piece of code do?
-# Answer: find a prime between 1 and 100 randomly, but this code ignores 2 and wrongly considers 1 as a prime 
+# Answer: find one prime between 1 and 100 randomly, but this code ignores 2 and wrongly considers 1 as a prime 
 
 # Import libraries
 # randint allows drawing a random number, 

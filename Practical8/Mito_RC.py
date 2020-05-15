@@ -9,25 +9,31 @@ import re
 # read the content
 xfile=open('Saccharomyces_cerevisiae.R64-1-1.cdna.all.fa','r')
 x=[]
-z=str()
+y=str()
 gene=[]
 cgene=[]
 genename=[]
-y=[]
 count=0
 # get all the genes in xfile
 for line in xfile:
+    # find the line containing the gene information
     if line.startswith('>'):
-        if z!='':
-            gene.append(z)
+        # add the sequence of the previous gene to 'gene' list
+        if y!='':
+            gene.append(y)
+        # add the gene name to 'genename' list
         genename.append(line[1:6])
-        z=''
+        # add all the gene information to 'x' list
         x.append(line)
+        # count the total number of gene
         count+=1
+        y=''
     else:
+        # if the line don't have '>', this line containing the sequence.
+        # remove the '\n' and add them to a string. 
         line=line.rstrip()
-        z=z+str(line)
-gene.append(z)
+        y+=line
+gene.append(y)
 # let users input a name for the file
 name=input('Please input a filename for a faste file you want(including".fa"): ')
 yfile=open(name,'w')

@@ -1,0 +1,3 @@
+In my opinion, I did a good job in this practical. I think this practical is not so hard. 
+This practical taught me some new methods to make a plot, which can help me to make a better plot in future.
+At the same time, this practical made me become more familiar with the use of numpy.

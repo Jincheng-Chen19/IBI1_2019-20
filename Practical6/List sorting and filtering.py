@@ -13,9 +13,7 @@ gene_lengths.sort()
 del gene_lengths[0]
 gene_lengths.pop()
 print(gene_lengths)
-# set an interval
-n=10000
-# make a box plots
+# make a box plots for gene length
 plt.boxplot(gene_lengths,
             vert=True,
             whis=1.5,

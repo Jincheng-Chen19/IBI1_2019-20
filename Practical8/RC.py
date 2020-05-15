@@ -15,11 +15,8 @@ seq1=re.sub('C','g',seq1)
 seq1=re.sub('A','t',seq1)
 seq1=re.sub('T','a',seq1)
 seq1=seq1.upper()
-# use list to reverse the sequence, let the cDNA sequence from 5' to 3'
-L=list(seq1)
-L.reverse()
-# change the list to string
-cseq=''.join([str(a)for a in L])
+#  reverse the sequence, let the cDNA sequence from 5' to 3'
+cseq=seq1[::-1]
 print(seq)
 print(seq1)
 print(cseq)

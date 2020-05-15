@@ -6,7 +6,7 @@ Created on Wed Mar 18 09:55:23 2020
 """
 # import necessary libraries
 import matplotlib.pyplot as plt
-# input DNA sequence
+# input DNA sequence as a string
 L='ATGCTTCAGAAAGGTCTTACG'
 # count the number of these four nucleotides
 a=L.count('A')

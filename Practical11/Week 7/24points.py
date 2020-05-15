@@ -11,18 +11,17 @@ for x in cards:
     if int(x) >=24 or int(x)<1:
         print('The input number must be integers from 1 to 23')
         break
-
 number=[]
 def countway(a):
     b=[]
-    for i in list(range(a-1)):
-        for j in list(range(i+1,a)):
+    for i in range(0,a-1):
+        for j in range(i+1,a):
             for k in range(6):
                 b.append([i,j,k])
     return b
 for z in cards:
     number.append(float(z))
-cw = [[],[]]
+cw=[[],[]]
 for i in range(2,len(number)+1):
     cw.append(countway(i))
     
