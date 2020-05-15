@@ -60,6 +60,7 @@ for i in V:
 # make a plot for all the proportion of vaccinatied people
 plt.figure(figsize=(6,4),dpi=150)
 n=1
+# choose color for each curve
 for x in dic:
     plt.plot(time,dic[x],color=cm.viridis(n),label=str(int(x*100))+'%')
     n+=25

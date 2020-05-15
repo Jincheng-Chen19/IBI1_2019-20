@@ -1,82 +1,93 @@
 # -*- coding: utf-8 -*-
 """
-Created on Mon May  4 19:14:53 2020
+Created on Wed Mar 18 12:16:02 2020
 
-@author: lenovo
+@author: Dell
 """
-# input the numbers
-n=input("Please input numbers to compute 24: (use ',' to divide them)")
-cards=n.split(',')
+# import necessary libraries
+import sys
+c=float()
+result=[]
+recursion_time=0
+cards=[]
+# let the user input the integers
+n= input("Please input numbers to compute 24:(use ',' to divide them)")
+# turn the string to list, split by ','
+N=n.split(',')
+# change all the string in list to float
+for i in N:
+   cards.append(float(i))
+# check whether all the number between 1 to 23
 for x in cards:
     if int(x) >=24 or int(x)<1:
         print('The input number must be integers from 1 to 23')
         break
-number=[]
-def countway(a):
-    b=[]
-    for i in range(0,a-1):
-        for j in range(i+1,a):
-            for k in range(6):
-                b.append([i,j,k])
-    return b
-for z in cards:
-    number.append(float(z))
-cw=[[],[]]
-for i in range(2,len(number)+1):
-    cw.append(countway(i))
-    
-cws=[]
-cwr=[]
-for i in range(len(number)):
-    cwr.append(cw[len(number)-i])
-def t(l):
-    l_copy=l[:]
-    if len(l_copy)==len(cwr)-1:
-        cws.append(l_copy)
-    for y in cwr[len(l)]:
-        l.append(y)
-        t(l)
-        l.pop()
-t([])
-
-def count(i,j,k,l):
-    c=0
-    if k==0:
-        c=l[i]+l[j]
-    elif k==1:
-        c= l[i]-l[j]
-    elif k==2:
-        c=l[j]-l[i]
-    elif k==3:
-        c=l[i]*l[j]
-    elif l[j]!=0 and l[i]!=0:
-        if k==4:
-            c=l[i]/l[j]
-        else:
-            c=l[j]/l[i]
-    if c==24:
-        return c
     else:
-        l[i]=c
-        l.pop(j)
+        # define the way to compute 24 points
+        def Function(a,b,f):
+            global c,recursion_time
+            if f==0:
+                c=a+b
+            if f==1:
+                c=a*b
+            if f==2:
+                c=a-b
+            if f==3:
+                if b==0.0:
+                    c='stop'
+                else:
+                    c=a/b
+            if f==4:
+                if a==0.0:
+                    c='stop'
+                else:
+                    c=b/a
+            # if any intermediate precess equals to 24, the funtion will break
+            if c==24.0:
+                recursion_time+=1
+                print('Yes')
+                print('Recursion times:',recursion_time)
+                # this code is got from the internet, https://www.geeksforgeeks.org/python-exit-commands-quit-exit-sys-exit-and-os-_exit/
+                sys.exit()
+            else:
+                return c
+        # define another function to do the recursive merging and calculating 
+        def R(L):
+            global c,recursion_time
+            #  if the length of list L is 1, 
+            if len(L)==1:
+                result.append(L[0])
+            else:
+                # take every possible two numbers into account, but may lead to repetition
+                for i in range(0,len(L)-1):
+                    for j in range(i+1,len(L)):
+                        L_copy1=L[:]
+                        x=L[i]
+                        y=L[j]
+                        L_copy1.remove(x)
+                        L_copy1.remove(y)
+                        for f in range(0,5):
+                            L_copy2=L_copy1[:]
+                            Result=Function(x,y,f)
+                            recursion_time+=1
+                            if c=='stop':
+                                c=float()
+                            else:
+                                L_copy2.append(Result)
+                                R(L_copy2)
+                            
 
-a=False
-t=0
-for x in cards:
-    if int(x) >=24 and int(x)<1:
-        a=True
-        break
-for value in cws:
-    number_copy=number[:]
-    for m in value:
-        if count(m[0],m[1],m[2],number_copy)==24 and a==False:
-            print('Yes')
-            t+=1
-            print('Recursion Times:',t)
-            a=True
-        else:
-            t+=1
-if a==False:
-    print('No')
-    
+        R(cards)
+        # if these number can calculate 24, print 'yes'
+        x=False
+        for i in range(len(result)):
+            if result[i]==24:
+                x=True
+                print('Yes')
+                break
+        # if cannot, print 'no'
+        if x==False:
+            print('No')
+            break
+# the complexity of this function: O(n**2).this complexity may be a little high.
     
